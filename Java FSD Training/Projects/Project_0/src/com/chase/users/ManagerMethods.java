@@ -7,6 +7,11 @@ import com.chase.accounts.Account;
 import com.chase.accounts.Transaction;
 import com.chase.database.BankDAOFactory;
 
+/*
+ * This class exists solely to clean up some of the code inside of User.java
+ * It's like mopping up rainwater in a thunderstorm.
+ */
+
 public class ManagerMethods {
 	private static ManagerMethods manager = null;
 	

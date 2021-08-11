@@ -4,6 +4,15 @@ import java.sql.SQLException;
 
 import com.chase.database.BankDAOFactory;
 
+/*
+ * Now this class was a source of some trouble. It wasn't difficult to create or add to the database, but it has too many cases to be perfect.
+ * If a source account or target account is NULL in the database, the corresponding field here is a negative number.
+ * This leads to the need to create numerous cases when dealing with this type of object. 4 cases each, to be exact.
+ * This instead could have been handled with a bit of inheritance.
+ * Transaction would be the parent, and Transfer, Withdrawal, and Deposit would all extend Transaction.
+ * Thus, no cases would be needed as I would be able to call overriden methods instead.
+ */
+
 public class Transaction {
 	private int id;
 	private double amount = 0.0;

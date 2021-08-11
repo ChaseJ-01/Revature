@@ -10,6 +10,16 @@ import com.chase.application.InputManager;
 import com.chase.application.PasswordManager;
 import com.chase.database.BankDAOFactory;
 
+/*
+ * This class is the real spaghetti code. If I were smarter, I would have made my menu options their own objects with a select() method.
+ * That method would then implement the desired functionality, and better yet it would be adjustable. For example, you could dynamically add
+ * choices to a menu object at runtime, thus allowing for a cleaner implementation of the Manager vs Employee menus below.
+ * 
+ * Originally, I had planned to make each type of user its own object and override methods to modify functionality.
+ * I really do not know why I decided against that. 
+ * I believe it might be because we learned SQL fairly late, long after I had implemented core functionality to the project.
+ */
+
 public class User {
 	private int id;
 	private String type = "User";
@@ -111,7 +121,7 @@ public class User {
 			System.out.println("Please enter a command:");
 			System.out.println("	1. Apply for a new bank account");
 			System.out.println("	2. Access an account");
-			System.out.println("	3. Quit");
+			System.out.println("	3. Log out");
 			
 			switch(InputManager.getInputManager().getInt()) {
 				case 1:{

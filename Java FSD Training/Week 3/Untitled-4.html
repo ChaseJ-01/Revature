@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1{
+            width:400px; 
+            height: 400px;
+            border: 2px solid red;
+        }
+    </style>
+</head>
+<body>
+    <marquee behavior="" direction="">
+        Welcome to my project!
+    </marquee>
+    <div id = "div1" ondrop="drop(event)" ondragover="allowDrop(event)">
+
+    </div>
+
+    <img id="img1" src = "https://www.google.com/logos/doodles/2015/googles-new-logo-5078286822539264.2-hp.gif" draggable='true' ondragstart="drag(event)">
+
+
+    <script>
+        function allowDrop(event){
+            event.preventDefault();
+        }
+
+        function drag(event){
+            var id = event.target.id;
+            event.dataTransfer.setData('text', id);
+        }
+
+        function drop(event){
+            var id = event.dataTransfer.getData('text');
+            event.target.appendChild(document.getElementById(id));
+        }
+    </script>
+</body>
+</html>

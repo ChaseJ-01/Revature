@@ -9,6 +9,11 @@ import java.util.Base64;
 import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.PBEKeySpec;
 
+/*
+ * This object handles the hashing of passwords.
+ * Passwords are never stored in plain text at all in this program unless they proceed to be immediately passed to this object.
+ */
+
 public class PasswordManager {
 	private static PasswordManager manager = null;
 	byte[] salt;

@@ -13,6 +13,12 @@ import com.chase.accounts.Transaction;
 import com.chase.application.InputManager;
 import com.chase.users.User;
 
+/*
+ * I did not like the use of this class + interface at all. 
+ * I wrote it this way because it was the architecture I was taught, but I believe I could have made it better.
+ * Unfortunately, I was unsure if that would go against program guidelines, so I was stuck writing it all this way.
+ */
+
 public class BankDAOImpl implements BankDAO {
 	private static Statement statement = null;
 	private Connection connection = null;

@@ -2,6 +2,12 @@ package com.chase.application;
 
 import java.util.*;
 
+/*
+ * This class handles all user inputs. I quite like this because it could be modified to automatically parse input as well.
+ * Overall, I think this might be something I would use in future projects, as it makes input collection very clean and reliable.
+ * Unfortunately, I did not modify String inputs to be friendly with the database. My poor users table is vulnerable to SQL injections.
+ */
+
 public class InputManager {
 	//Singleton class - there only needs to be one manager.
 	Scanner scanner = new Scanner(System.in);

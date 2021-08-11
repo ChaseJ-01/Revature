@@ -5,6 +5,12 @@ import java.util.List;
 
 import com.chase.database.BankDAOFactory;
 
+/*
+ * Originally, I had planned on creating various types of accounts that all had special features like interest or withdrawal limits.
+ * Instead due to time constraints, there exists only one type of account. Still, not bad. This could easily be refactored to allow
+ * multiple different account types.
+ */
+
 public class Account {
 	protected int id;
 	protected int owner;
@@ -13,9 +19,6 @@ public class Account {
 	protected String status = "Pending Approval";
 	protected String date_created;
 	protected double limit = 5000.00;
-	
-	//DEBUG VARIABLES
-	double DEBUG_funds = 5000;
 	
 	public Account() {
 		

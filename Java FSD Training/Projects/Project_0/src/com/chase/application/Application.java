@@ -9,20 +9,29 @@ import java.util.*;
 
 import org.apache.log4j.*;
 
+/*
+ * This is my main class, it contains the code used to log in and create a user account. 
+ * Once a user is logged in, this class connects the user to their specific user object, so the application always knows which user is logged in.
+ * Once connected, all further functionality is handled by the User object itself, stupidly enough.
+ * Handling menus in the user object was by far my worst mistake on this project - consider this lesson learned.
+ */
+
 public class Application {
 	
 	//We did not get very much instruction on how to use log4j, so this is the bare minimum.
+	//It outputs to log.out, and logs only things that happen in this class.
+	//I'll have to play with it more to really understand what I can do with it in the future.
 	public static Logger logger = LogManager.getLogger(Application.class);
 	
 	public static void main(String[] args) {
-		ConsoleAppender ca = new ConsoleAppender();
-		ca.setThreshold(Level.INFO);
-		ca.setLayout(new PatternLayout("%d - %p [%c]: %m%n"));
-		ca.activateOptions();
-		LogManager.getRootLogger().addAppender(ca);
+		FileAppender fa = new FileAppender();
+		fa.setFile("log.out");
+		fa.setThreshold(Level.INFO);
+		fa.setLayout(new PatternLayout("%d - %p [%c]: %m%n"));
+		fa.activateOptions();
+		LogManager.getRootLogger().addAppender(fa);
 		logger.info("Logger initialized");
 		
-		boolean error = true;
 		BankDAO dao = BankDAOFactory.getBankDAO();
 		logger.info("DAO initialized");
 		
@@ -30,7 +39,7 @@ public class Application {
 		InputManager inputManager = InputManager.getInputManager();
 		logger.info("Input Manager initialized");
 		
-		while(error) {
+		while(true) {
 			System.out.println("==========");
 			System.out.println("Please enter a command:\n");
 			System.out.println("	1. Login");
@@ -43,31 +52,24 @@ public class Application {
 					String username = inputManager.getString();
 					try {
 						user = dao.userLogin(username);
-						error = false;
 					} catch (SQLException e) {
 						e.printStackTrace();
-						error = true;
 					}
 					if(user != null) {
 						System.out.println("Login Successful!");
+						logger.info("User logged in");
+						user.userMenu();
+						logger.info("User logged out");
 					} else {
 						System.out.println("Incorrect Username/Password combination");
-						error = true;
 					}
 					break;
 				}
 				case 2: createUser(); break;
 				case 3: return;
-				default: error = true;
+				default: System.out.println("Unknown command"); break;
 			}
 		}
-		logger.info("User logged in");
-		
-		user.userMenu();
-		
-		logger.info("User logged out");
-		
-		return;
 	}
 	
 	public static void createUser() {
