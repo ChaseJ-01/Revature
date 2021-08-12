@@ -42,10 +42,13 @@ public class InputManager {
 			try {
 				output = scanner.nextInt();
 				scanner.nextLine();
-				error = false;
 			} catch (InputMismatchException e) {
 				error = true;
+				System.out.print("\nInvalid input, please try again: ");
+				scanner.nextLine();
+				continue;
 			}
+			error = false;
 		}
 		
 		return output;
@@ -59,10 +62,13 @@ public class InputManager {
 			try {
 				output = scanner.nextDouble();
 				scanner.nextLine();
-				error = false;
 			} catch (InputMismatchException e) {
 				error = true;
+				System.out.print("\nInvalid input, please try again: ");
+				scanner.nextLine();
+				continue;
 			}
+			error = false;
 		}
 		
 		return output;
