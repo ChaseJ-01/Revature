@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+	.wrapper{
+		width: 40%;
+		border: 1px solid #444;
+		margin: 0 auto;
+		padding: 10px;
+	}
+</style>
+</head>
+<body>
+	<div class="wrapper">
+		<h1>Registration Form</h1>
+		<form action="register" method="post">
+			<table>
+				<tr>
+					<td>Enter Name</td>
+					<td><input type="text" name="user_name" placeholder="Name" /></td>
+				</tr>
+				<tr>
+					<td>Enter Email</td>
+					<td><input type="text" name="user_email" placeholder="Email" /></td>
+				</tr>
+				<tr>
+					<td>Enter Password</td>
+					<td><input type="password" name="user_pass" placeholder="Password" /></td>
+				</tr>
+				<tr>
+					<td>Select Gender</td>
+					<td>
+						<input type="radio" name="user_gender" value="male" />Male
+						<input type="radio" name="user_gender" value="female" />Female
+					</td>
+				</tr>
+				<tr>
+					<td>Country</td>
+					<td>
+						<select name="user_country">
+							<option value="USA">USA</option>
+							<option value="UK">UK</option>
+							<option value="Other">Other</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<input type="checkbox" value="checked" name="agree" />
+					</td>
+					<td>Accept Terms and Conditions</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<input type="submit" value="Submit" />
+					</td>
+				</tr>
+			</table>
+		</form>
+	</div>
+</body>
+</html>

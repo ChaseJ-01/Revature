@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .wrapper{
+            width: 300px;
+            margin-top: 100px;
+            border-radius: 7px;
+            box-shadow: 5px 10px darkgray;
+        }
+
+        input[type="text"], input[type="password"]{
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+            border: 1px solid gray;
+        }
+
+        .btn{
+            background-color: steelblue;
+            padding: 5px, 30px;
+            color: white;
+            text-transform: capitalize;
+            font-family: 'Oswald', sans-serif;
+            border: 0px;
+            border-radius: 4px;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <h2>Sign Up</h2>
+        <form name="inputform" method="post" onsubmit="onSubmit(event)" action="">
+            <div>
+                <label for="">Username</label><br>
+                <input type = "text" name="" id="username">
+            </div>
+
+            <div>
+                <label for="">Password</label><br>
+                <input type = "password" name="" id="password">
+            </div>
+
+            <div>
+                <label for="">Confirm Password</label><br>
+                <input type = "password" name="" id="confirm">
+            </div>
+
+            <p>
+                <input class="btn" type="submit" name="" id="">
+            </p>
+        </form>
+        <script>
+                function onSubmit(event){
+                    event.preventDefault();
+
+                    var user = document.inputform.username.value;
+                    var pword = document.inputform.password.value;
+                    var pwordc = document.inputform.confirm.value;
+
+                    if(user=="" || pword=="" || pwordc==""){
+                        alert("All fields are required!");
+                    }
+                    else if(pword != pwordc){
+                        alert("Passwords do not match!");
+                    }
+                    else{
+                        alert("Account successfully created.");
+                    }
+                }
+        </script>
+    </div>
+</body>
+</html>

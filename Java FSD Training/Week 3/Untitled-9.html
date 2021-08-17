@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="result"></h1>
+    <script>
+        var a = 1;
+        var b = 2;
+        var c = a + b;
+
+        console.log(c);
+        alert(c);
+        document.write(c);
+        document.getElementById('result').innerHTML = c;
+        
+    </script>
+
+    <script>
+        function addNumber(a, b){
+            return a + b;
+        }
+        function subtractNumber(a, b){
+            document.write(a-b);
+        }
+        function sayHello(){
+            alert('Hello!');
+        }
+        function returnGoodbye(){
+            return 'Goodbye!';
+        }
+        subtractNumber(6,4);
+        sayHello();
+        document.write(addNumber(5, 5));
+        document.write(returnGoodbye());
+    </script>
+
+    <script>
+        function countToTen(){
+            for(let i = 1; i < 10; 1++){
+                console.log(i);
+            }
+        }
+
+        countToTen();
+    </script>
+
+    <script>
+        function greeting(name){
+            return 'Hello ' + name;
+        }
+        console.log(greeting('Smith'));
+    </script>
+
+    <script>
+        const add = (a, b) => a + b;
+        console.log(add(4, 2));
+    </script>
+</body>
+</html>
