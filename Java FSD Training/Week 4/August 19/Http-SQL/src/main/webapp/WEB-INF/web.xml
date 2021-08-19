@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  <display-name>Http-SQL</display-name>
+  <servlet>
+  	<servlet-name>Employees</servlet-name>
+  	<servlet-class>com.chase.servlets.ListServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>Employees</servlet-name>
+  	<url-pattern>/employees</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>AddEmployee</servlet-name>
+  	<servlet-class>com.chase.servlets.AddServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>AddEmployee</servlet-name>
+  	<url-pattern>/add</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>EditEmployee</servlet-name>
+  	<servlet-class>com.chase.servlets.EditServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>EditEmployee</servlet-name>
+  	<url-pattern>/edit</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>DeleteEmployee</servlet-name>
+  	<servlet-class>com.chase.servlets.DeleteServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>DeleteEmployee</servlet-name>
+  	<url-pattern>/delete</url-pattern>
+  </servlet-mapping>
+</web-app>
